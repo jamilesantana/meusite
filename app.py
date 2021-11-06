@@ -35,7 +35,7 @@ def raspador_noticias():
     <a href="/">Página inicial</a>
     <a href="/sobre">Sobre esse site</a>
     
-    <p> Notícias de destaque em Mogi:{noticias_mogi["link"]} </b>.</p>""" 
+    <p> Notícias de destaque em Mogi:{noticias_mogi["link"]} </b>.</p>"""
 
 
 
