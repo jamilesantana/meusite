@@ -20,7 +20,7 @@ def hello_word():
 
 @app.route("/sobre")
 def sobre():
-    arquivo= open ("templates/sobre.html")
+    arquivo= open ("template/sobre.html")
     return arquivo.read()
 
 
