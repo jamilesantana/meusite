@@ -4,6 +4,7 @@ from GoogleNews import GoogleNews
 from flask import Flask 
 
 def noticias():
+    googlenews = GoogleNews()
     googlenews.set_lang('pt-br')
     googlenews.get_news("Mogi das Cruzes")
     resultado = googlenews.result()
