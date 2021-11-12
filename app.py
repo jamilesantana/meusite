@@ -14,11 +14,9 @@ def noticias():
 app = Flask(__name__)
 @app.route("/")
 def hello_word():
-    return """<h1>Olá mundo!</h1> 
-    <p><b>Esse é meu primeiro site</b>!</p>
-    <a href="/sobre">Sobre esse site</a>
-    <a href="/raspador_noticias">Raspador de Notícias</a>
-    """
+    arquivo = open("templates/home.html")
+    return arquivo.read()
+    
 
 @app.route("/sobre")
 def sobre():
