@@ -20,11 +20,9 @@ def hello_word():
 
 @app.route("/sobre")
 def sobre():
-    return """<h1>Sobre</h1> 
-    
-    <a href="/">Página inicial</a>
-    
-    <p> Esse site foi criado por <b>Jamile Santana </b>.</p>"""
+    arquivo= open ("templates/sobre.html")
+    return arquivo.read()
+
 
 @app.route("/raspador_noticias")
 def raspador_noticias():
