@@ -1,4 +1,17 @@
 <h1>Olá mundo!</h1> 
 <p><b>Esse é meu primeiro site</b>!</p>
-<a href="/sobre">Sobre esse site</a>
+
 <a href="/raspador_noticias">Raspador de Notícias</a>
+
+
+{% extends 'base.html' %}
+
+{% block titulo %}Página inicial{% endblock %}
+{% block cabecalho %}Esse é meu primeiro site{% endblock %}
+{% block conteudo %}
+<<a href="/sobre">Sobre esse site</a> </a> - <a href="/raspador_noticias">Raspador de Notícias</a>
+<p>
+  Olá, <b>alunos do Insper</b>!
+</p>
+{% endblock %}
+
