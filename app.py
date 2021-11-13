@@ -13,8 +13,7 @@ def noticias():
 app = Flask(__name__)
 @app.route("/")
 def hello_word():
-    arquivo = open("templates/home.html")
-    return arquivo.read()
+    return render_template ("home.html")
     
 
 @app.route("/sobre")
