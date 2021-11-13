@@ -27,12 +27,8 @@ def sobre():
 @app.route("/raspador_noticias")
 def raspador_noticias():
     noticias_mogi = noticias()
-    return f"""<h1>Raspador de notícias</h1> 
-    
-    <a href="/">Página inicial</a>
-    <a href="/sobre">Sobre esse site</a>
-    
-    <p> Notícias de destaque em Mogi:{noticias_mogi["link"]} </b>.</p>""" 
+    arquivo = open("templates/noticias.html")
+    return render_template("noticias.html", link = dados)
 
 
 
