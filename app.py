@@ -1,7 +1,7 @@
 import csv
 import pandas as pd
 from GoogleNews import GoogleNews
-from flask import Flask 
+from flask import Flask, render_template 
 
 def noticias():
     googlenews = GoogleNews()
