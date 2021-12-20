@@ -7,8 +7,8 @@ def noticias():
     googlenews = GoogleNews()
     googlenews.set_lang('pt-br')
     googlenews.get_news("Mogi das Cruzes")
-    resultado = googlenews.result()
-    return pd.DataFrame(resultado)
+    resultado = googlenews.result():
+    
     
     
 app = Flask(__name__)
