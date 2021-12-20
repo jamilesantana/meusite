@@ -3,6 +3,7 @@ import csv
 import pandas as pd
 from GoogleNews import GoogleNews
 from flask import Flask, render_template 
+app = Flask(__name__)
 
 def noticias():
     googlenews = GoogleNews()
@@ -10,9 +11,9 @@ def noticias():
     googlenews.get_news("Mogi das Cruzes")
     resultado = googlenews.result()
     df =  pd.DataFrame(resultado)
-    return df.DataFrame(resultado)
+    return render_template("noticias.html", dados = df.to_html())
 
-app = Flask(__name__)
+
 @app.route("/")
 def hello_word():
     return render_template("home.html")
