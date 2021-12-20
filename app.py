@@ -1,3 +1,4 @@
+
 import csv
 import pandas as pd
 from GoogleNews import GoogleNews
@@ -7,10 +8,9 @@ def noticias():
     googlenews = GoogleNews()
     googlenews.set_lang('pt-br')
     googlenews.get_news("Mogi das Cruzes")
-    resultado = googlenews.result():
-    
-    
-    
+    resultado = googlenews.result()
+    return pd.DataFrame(resultado)
+
 app = Flask(__name__)
 @app.route("/")
 def hello_word():
@@ -25,7 +25,5 @@ def sobre():
 
 @app.route("/raspador_noticias")
 def raspador_noticias():
-    noticias_mogi_html = noticias()
-    return render_template(html_resultados = noticias_mogi_html.to_html)
-
-
+    noticias_mogi = noticias()
+    return render_template("noticias.html", dados = noticias_mogi)
