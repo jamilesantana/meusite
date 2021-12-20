@@ -25,6 +25,6 @@ def sobre():
 
 @app.route("/raspador_noticias")
 def raspador_noticias():
-    noticias_mogi = noticias()
-    return render_template("noticias.html", dados = noticias_mogi.to_html)
-
+    noticias_mogi = resultado.DataFrame (noticias, '//div[@class="container-topo-3-colunas grid-x"]//div[@class="highlight__title theme-title-element "]//a'))
+    vehtml = dados.to_html(render_links=True,index=False,escape=True,table_id="dados")
+ return render_template("noticias.html", vehtml = dados )
