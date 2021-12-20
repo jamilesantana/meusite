@@ -7,15 +7,18 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello_world():
+def hello_word():
     return render_template("home.html")
+    
 
 @app.route("/sobre")
 def sobre():
-    return render_template("sobre.html")
+    arquivo= open("templates/sobre.html")
+    return arquivo.read()
 
-@app.route('/noticias')
-def news():
+
+@app.route("/raspador_noticias")
+def raspador_noticias():
     googlenews = GoogleNews()
     googlenews.set_lang('pt-br') 
     googlenews.get_news("'transparência pública'") 
