@@ -1,5 +1,11 @@
-<h1>Raspador de notícias</h1> 
-<a href="/">Página inicial</a>
-<a href="/sobre">Sobre esse site</a>
-<p> Notícias de destaque em Mogi:<p> {{ dados|safe }} </p>
+{% extends 'base.html' %}
+
+{% block titulo %} Raspador de Notícias {% endblock %}
+{% block cabecalho %} Registros de notícias sobre Transparência Pública e Lei de Acesso à Informação {% endblock %}
+{% block conteudo %}
+ <a href="/">Página inicial</a>
+ <a href="/sobre">Sobre esse site</a>
+      <p> 
+      <b> Coleta de notícias no Google News </b> 
+<p> {{ dados|safe }} </p>
 {% endblock %}
