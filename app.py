@@ -10,9 +10,9 @@ def noticias():
     resultado = googlenews.result()
     def path_to_image_html(path):
         return '<img src= "' + path + '" width ="60" >'
-    resultado.to_html(escape = False, formatters=dict(img=path_to_image_html ))
-    from IPython.core.display import HTML
-    return HTML (resultado.to_html(escape=False, formatters=dict(img=path_to_image_html )))
+        resultado.to_html(escape = False, formatters=dict(img=path_to_image_html ))
+        from IPython.core.display import HTML
+        return HTML (resultado.to_html(escape=False, formatters=dict(img=path_to_image_html )))
 
 
 
