@@ -8,14 +8,9 @@ def noticias():
     googlenews.set_lang('pt-br')
     googlenews.get_news("Mogi das Cruzes")
     resultado = googlenews.result()
-    def path_to_image_html(path):
-        return '<img src= "' + path + '" width ="60" >'
-        resultado.to_html(escape = False, formatters=dict(img=path_to_image_html ))
-        from IPython.core.display import HTML
-        return HTML (resultado.to_html(escape=False, formatters=dict(img=path_to_image_html )))
-
-
-
+    return pd.DataFrame(resultado)
+    
+    
 app = Flask(__name__)
 @app.route("/")
 def hello_word():
@@ -30,7 +25,7 @@ def sobre():
 
 @app.route("/raspador_noticias")
 def raspador_noticias():
-    noticias_mogi = noticias()
-    return render_template("noticias.html", dados = noticias_mogi)
+    noticias_mogi_html = noticias()
+    return render_template( "raspador_notícias.html", html_resultados = noticias_mogi_html.to_html)
 
 
