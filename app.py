@@ -26,4 +26,4 @@ def sobre():
 @app.route("/raspador_noticias")
 def raspador_noticias():
     noticias_mogi = noticias()
-    return render_template("noticias.html", dados = noticias_mogi)
+    return render_template("noticias.html", dados = noticias_mogi.to_html)
