@@ -10,6 +10,7 @@ def noticias():
     googlenews.get_news("Mogi das Cruzes")
     resultado = googlenews.result()
     df =  pd.DataFrame(resultado)
+    return df.DataFrame(resultado)
 
 app = Flask(__name__)
 @app.route("/")
