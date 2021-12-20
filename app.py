@@ -1,34 +1,29 @@
-import csv
 import pandas as pd
-from GoogleNews import GoogleNews
-from flask import Flask, render_template 
+import os
+from pandas import json_normalize 
+from flask import Flask, render_template
+from GoogleNews import GoogleNews 
+app = Flask(__name__)
 
-def noticias():
-    googlenews = GoogleNews()
-    googlenews.set_lang('pt-br')
-    googlenews.get_news("Mogi das Cruzes")
-    resultado = googlenews.result()
-    return pd.DataFrame(resultado)
 
-app = Flask(_name_)
 @app.route("/")
-def hello_word():
+def hello_world():
     return render_template("home.html")
-    
 
 @app.route("/sobre")
 def sobre():
-    arquivo= open("templates/sobre.html")
-    return arquivo.read()
+    return render_template("sobre.html")
 
-
-@app.route("/raspador_noticias")
-def raspador_noticias():
+@app.route('/noticias')
+def news():
     googlenews = GoogleNews()
-    googlenews.set_lang('pt-br')
-    googlenews.get_news("Mogi das Cruzes")
-    resultado = googlenews.result()
-    df = pd.DataFrame(resultado) #coloca o resultado em uma tabela  
-    return render_template("raspador_noticias.html", dados = df.to_html) # chama a variável dados que contém df para ser mostrada nesta seção do site
+    googlenews.set_lang('pt-br') 
+    googlenews.get_news("'transparência pública'") 
+    googlenews.get_news("'Lei de Acesso à Informação'") 
+    resultado = googlenews.result() 
+    
+    df = pd.DataFrame(resultado) 
+    df1= df.drop(columns=['desc', 'datetime', 'img', 'media']) 
+    return render_template("noticias.html", dados = df1.to_html()) 
 
  
