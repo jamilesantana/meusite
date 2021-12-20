@@ -9,7 +9,7 @@ def noticias():
     googlenews.set_lang('pt-br')
     googlenews.get_news("Mogi das Cruzes")
     resultado = googlenews.result()
-    
+    return pd.DataFrame(resultado)
 
 app = Flask(__name__)
 @app.route("/")
@@ -27,3 +27,4 @@ def sobre():
 def raspador_noticias():
     noticias_mogi = noticias()
     return render_template("noticias.html", dados = noticias_mogi.to_html)
+
