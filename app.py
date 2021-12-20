@@ -9,7 +9,7 @@ def noticias():
     googlenews.set_lang('pt-br')
     googlenews.get_news("Mogi das Cruzes")
     resultado = googlenews.result()
-    return pd.DataFrame(resultado)
+    df =  pd.DataFrame(resultado)
 
 app = Flask(__name__)
 @app.route("/")
@@ -25,6 +25,6 @@ def sobre():
 
 @app.route("/raspador_noticias")
 def raspador_noticias():
-    noticias_mogi = resultado.DataFrame (noticias, '//div[@class="container-topo-3-colunas grid-x"]//div[@class="highlight__title theme-title-element "]//a'))
-    vehtml = dados.to_html(render_links=True,index=False,escape=True,table_id="dados")
- return render_template("noticias.html", vehtml = dados )
+    noticias_mogi = noticias()
+    return render_template("noticias.html", dados = df.to_html())
+ 
