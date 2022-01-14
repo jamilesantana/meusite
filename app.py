@@ -30,5 +30,4 @@ def raspador_noticias():
     resultado = googlenews.result()
 
     df = pd.DataFrame(resultado)
-    df1 = df.drop(columns=["desc", "datetime", "img", "media"])
-    return render_template("noticias.html", dados=df1)
+    return render_template("noticias.html", dados=df.to_dict("records"))
