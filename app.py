@@ -29,15 +29,15 @@ def raspador_noticias():
     df1= df.drop(columns=['desc', 'datetime', 'img', 'media']) 
     return render_template("noticias.html", dados = df1.to_html()) 
 
- 
-from flask import requests
-import requests
-
-@app.route("/telegram", methods =["POST"]
+           
+ from flask 
+ import requestimport requests
+           
+@app.route("/telegram", methods=["POST"])
 def telegram():
            token = "5034498375:AAENMAIqZObmce_hDdU90ZuT9evXEskHTGY"
-           dados = request.json #recebe dados do telegram
-           mensagem = {"chat_id": dados["message"] ["chat"] ["id"], "text" : "Olá!"}  #monta mensagem
-           url =f"https://api.telegram.org/bot{token}/sendMessage" #faz requisição pra API do Telegram
-           requests.post (url, data=mensagem)
+           dados = request.json
+           mensagem = {"chat_id": dados["message"]["chat"]["id"], "text": "oi!"}
+           url = f"https://api.telegram.org/bot{token}/sendMessage"
+           requests.post(url, data=mensagem)
            return "ok"
