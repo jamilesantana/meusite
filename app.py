@@ -31,7 +31,7 @@ def raspador_noticias():
 
            
  from flask 
- import requestimport requests
+ import request import requests
            
 @app.route("/telegram", methods=["POST"])
 def telegram():
