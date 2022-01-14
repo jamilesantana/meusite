@@ -32,14 +32,6 @@ def raspador_noticias():
 from flask import request
 import requests
 
-@app.route("/telegram", methods=["POST"])
-def telegram():
-    token = "5034498375:AAENMAIqZObmce_hDdU90ZuT9evXEskHTGY"
-    dados = request.json
-    mensagem = {"chat_id": dados["message"]["chat"]["id"], "text": "Olá!"}
-    url = f"https://api.telegram.org.bot{token}/sendMessage"
-    requests.post(url,data=mensagem)
-    return "ok"
 
 
  
