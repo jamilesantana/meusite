@@ -5,7 +5,25 @@
 {% block conteudo %}
  <a href="/">Página inicial</a>
  <a href="/sobre">Sobre esse site</a>
-      <p> 
-      <b> Coleta de notícias no Google News </b> 
-<p> {{ dados|safe }} </p>
+<p>
+  <b> Coleta de notícias no Google News </b>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th> Data </th>
+      <th> Site </th>
+      <th> Título </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in dados %}
+    <tr>
+      <td> {{ row.date }} </td>
+      <td> {{ row.site }} </td>
+      <td> <a href="https://{{ row.link }}">{{ row.title }}</a> </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
