@@ -10,6 +10,6 @@ conteúdo e veículo publicado.
 A base é atualizada automaticamente e está disponível em
 https://meusite-jamile.herokuapp.com/
 
-Este é um projeto de conclusão da disciplina de Algoritmos de Automação, do
+Este é um projeto de conclusão da disciplina de Algoritmos de Automação e projeto final do
 curso de Master em Jornalismo de Dados, Automação e Data Storytelling do
-Insper.
+Insper. Foi criado pela aluna Jamile Santana, com orientação dos professores Álvaro Justin e Eduarco Cuducos.
