@@ -2,3 +2,4 @@ flask
 gunicorn
 GoogleNews
 pandas
+requests
